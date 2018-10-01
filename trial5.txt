@@ -1,0 +1,79 @@
+
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package personal;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Login extends JFrame implements ActionListener {
+    JLabel l2,l3,l4;
+    JTextField tf;
+    JButton btn;
+    JPasswordField p;
+    Login(){
+    JFrame myframe=new JFrame("Login Session");
+    l2= new JLabel ("Login Session");
+    l2.setForeground(Color.pink);
+    l2.setFont(new Font ("Ariel", Font.BOLD,19));
+    
+    l3=new JLabel("Username");
+    l4=new JLabel("Password");
+    tf=new JTextField();
+    p=new JPasswordField();
+    btn=new JButton("Login");
+    
+    l2.setBounds(100, 30, 500,40);
+    l3.setBounds(70,70, 200,40);
+    l4.setBounds(80,100, 200,30);
+    tf.setBounds(300,80, 100,30);
+    p.setBounds(200,80, 200,30);
+    btn.setBounds(150,160, 100,30);
+    
+    myframe.add(l2);
+    myframe.add(l3);
+    myframe.add(tf);
+    myframe.add(l4);
+    myframe.add(p);
+    myframe.add(btn);
+    
+    myframe.setSize(500,500);
+    myframe.setLayout(null);
+    myframe.setVisible(true);
+    
+    
+    
+    }
+        
+    
+
+    public static void main(String[] args); 
+    public void actionPerformed(ActionEvent AE) 
+    {
+      String name=tf.getText();
+      String password=tf.getText();
+      if(name.equals("Linnet")&&password.equals("Heaven101"))
+      {
+          Welcome Welc=new Welcome();
+          Welc.setVisible(true);
+          JLabel label=new JLabel("Welcome"+""+name);
+          Welc.getContentPane().add(label);
+          
+      }
+      else
+      {
+          JOptionPane.ShowMessageDialog(this,"incorrect input", "ERROR",
+                  JOptionPane.ERROR_MESSAGE);
+      }
+    }
+    
+}
